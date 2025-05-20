@@ -1,48 +1,58 @@
 # Deep Learning Regression - Automobile Price Prediction
 
-## 📄 Deskripsi Proyek
-Proyek ini bertujuan untuk membangun model regresi menggunakan Artificial Neural Network (ANN) untuk memprediksi harga mobil berdasarkan berbagai fitur seperti spesifikasi teknis dan karakteristik kendaraan. Model dikembangkan dengan TensorFlow dan Keras.
+## 📄 Project Description
 
-## 🧰 Tools & Library
-- Python
-- Pandas, NumPy, Matplotlib, Seaborn, Missingno
-- Scikit-learn (preprocessing, train_test_split)
-- TensorFlow & Keras
+This project aims to build a regression model using an Artificial Neural Network (ANN) to predict car prices based on various features such as technical specifications and vehicle characteristics. The model is developed using TensorFlow and Keras.
 
-## 📚 Alur Pengerjaan
-1. **Impor Library**  
-   Menggunakan library standar untuk data handling, visualisasi, preprocessing, dan deep learning.
+## 🧰 Tools & Libraries
 
-2. **Memuat Dataset**  
-   Dataset _Automobile_data.csv_ dimuat dan dilakukan pemeriksaan struktur data.
+* Python
+* Pandas, NumPy, Matplotlib, Seaborn, Missingno
+* Scikit-learn (for preprocessing and train-test split)
+* TensorFlow & Keras
 
-3. **Exploratory Data Analysis (EDA)**  
-   - Melihat struktur data, statistik deskriptif.
-   - Menangani missing values:
-     - Mean imputasi untuk data numerik dengan missing < 75%.
-     - Modus imputasi untuk data kategorikal.
-     - Menghapus kolom jika missing > 75% (tidak ada pada kasus ini).
+## 📚 Workflow
 
-4. **Feature Engineering**  
-   - Label Encoding untuk fitur kategorikal.
-   - StandardScaler untuk normalisasi fitur numerik.
-   - Membagi dataset menjadi data latih dan data uji (80:20).
+1. **Import Libraries**
+   Standard libraries are used for data handling, visualization, preprocessing, and deep learning.
 
-5. **Modeling**  
-   - Arsitektur ANN dengan beberapa layer Dense, Batch Normalization, dan Dropout.
-   - Optimizer: Adam dengan learning rate 0.001.
-   - Loss function: Mean Squared Error (MSE).
-   - Monitoring model menggunakan EarlyStopping dan ModelCheckpoint.
+2. **Load Dataset**
+   The *Automobile\_data.csv* dataset is loaded and its structure is examined.
 
-6. **Evaluasi Model**  
-   - Model dievaluasi menggunakan test set.
-   - Metrik yang digunakan: Loss (MSE) dan MAE (Mean Absolute Error).
+3. **Exploratory Data Analysis (EDA)**
 
-7. **Inference (Prediksi Data Baru)**  
-   - Melakukan encoding dan scaling pada input baru sebelum diprediksi.
-   - Menghasilkan output prediksi harga mobil.
+   * Analyzing data structure and descriptive statistics
+   * Handling missing values:
 
-## 📊 Hasil
-- **Test Loss (MSE):** ~2529.8472
-- **Test MAE:** ~32.6620
-- Model menunjukkan performa yang cukup baik dengan error rata-rata ±33 satuan harga.
+     * Mean imputation for numerical data with < 75% missing values
+     * Mode imputation for categorical data
+     * Dropping columns with > 75% missing values (not applicable in this case)
+
+4. **Feature Engineering**
+
+   * Label Encoding for categorical features
+   * StandardScaler for normalizing numerical features
+   * Splitting the dataset into training and testing sets (80:20 split)
+
+5. **Modeling**
+
+   * ANN architecture with multiple Dense layers, Batch Normalization, and Dropout
+   * Optimizer: Adam with a learning rate of 0.001
+   * Loss function: Mean Squared Error (MSE)
+   * Model training monitored using EarlyStopping and ModelCheckpoint
+
+6. **Model Evaluation**
+
+   * Evaluated on the test set
+   * Metrics used: Loss (MSE) and Mean Absolute Error (MAE)
+
+7. **Inference (New Data Prediction)**
+
+   * Encoding and scaling applied to new input before prediction
+   * Produces predicted car price as output
+
+## 📊 Results
+
+* **Test Loss (MSE):** \~2529.8472
+* **Test MAE:** \~32.6620
+* The model demonstrates reasonably good performance with an average error of ±33 units of price.
